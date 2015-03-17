@@ -11,11 +11,23 @@ namespace StringCalculator.Tests
 {
     public class StringCalculatorTests
     {
+        private StringCalculator calc;
+
+        public StringCalculatorTests()
+        {
+            calc = new StringCalculator();
+        }
+
         [Fact]
         public void Returns0WhenEmptyString()
         {
-            StringCalculator calc = new StringCalculator();
-            calc.add("").Should().Be(0);      
+            calc.Add("").Should().Be(0);      
+        }
+
+        [Fact]
+        public void ReturnsTheSingleNumberProvided()
+        {
+            calc.Add("2").Should().Be(2);
         }
     }
 }

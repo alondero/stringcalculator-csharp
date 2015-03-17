@@ -9,9 +9,14 @@ namespace StringCalculator
     public class StringCalculator
     {
         // Adds any digits it finds in the input string, providing the answer as an integer
-        public int add(string input)
+        public int Add(string input)
         {
-            return 0;
+            if (input == "")
+            {
+                return 0;
+            }
+
+            return Convert.ToInt32(input);
         }
     }
 }
