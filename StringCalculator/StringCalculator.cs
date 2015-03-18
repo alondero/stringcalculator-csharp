@@ -8,6 +8,8 @@ namespace StringCalculator
 {
     public class StringCalculator
     {
+        private readonly char[] _delimiters = { ',', '\n' };
+
         // Adds any digits it finds in the input string, providing the answer as an integer
         public int Add(string input)
         {
@@ -17,7 +19,7 @@ namespace StringCalculator
             }
 
             return input
-                    .Split(',')
+                    .Split(_delimiters)
                     .Sum(token => Convert.ToInt32(token));
         }
     }

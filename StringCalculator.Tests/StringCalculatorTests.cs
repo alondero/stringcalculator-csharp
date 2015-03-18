@@ -35,5 +35,11 @@ namespace StringCalculator.Tests
         {
             calc.Add("1,2").Should().Be(3);
         }
+
+        [Fact]
+        public void ReturnsTheSumOfMultipleNumbersDelimitedByNewLine()
+        {
+            calc.Add("7\n42").Should().Be(49);
+        }
     }
 }
