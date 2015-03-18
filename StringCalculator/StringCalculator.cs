@@ -16,7 +16,9 @@ namespace StringCalculator
                 return 0;
             }
 
-            return Convert.ToInt32(input);
+            return input
+                    .Split(',')
+                    .Sum(token => Convert.ToInt32(token));
         }
     }
 }

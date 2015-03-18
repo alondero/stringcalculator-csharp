@@ -29,5 +29,11 @@ namespace StringCalculator.Tests
         {
             calc.Add("2").Should().Be(2);
         }
+
+        [Fact]
+        public void ReturnsTheSumOfTwoDelimitedNumbers()
+        {
+            calc.Add("1,2").Should().Be(3);
+        }
     }
 }
