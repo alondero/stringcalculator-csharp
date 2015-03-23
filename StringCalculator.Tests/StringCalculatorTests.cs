@@ -64,6 +64,12 @@ namespace StringCalculator.Tests
 
             act.ShouldThrow<NegativeNumberException>().WithMessage("*-8*-7*-6*-3");
         }
+
+        [Fact]
+        public void FilterNumbersGreaterThan1000()
+        {
+            calc.Add("2,1000,1005").Should().Be(1002);
+        }
     }
 
 }

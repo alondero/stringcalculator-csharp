@@ -28,6 +28,7 @@ namespace StringCalculator
             }
 
             return numbers
+                .Where(number => number <= 1000)
                 .Sum();
         }
 
