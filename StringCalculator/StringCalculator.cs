@@ -24,15 +24,11 @@ namespace StringCalculator
                     .Select(token => Convert.ToInt32(token));
 
             if (numbers.Min() < 0) {
-                throw new NegativeNumberException("Negative number found!");
+                throw new NegativeNumberException(numbers.Where(number => number < 0));
             }
 
-            return numbers.Sum();
-        }
-
-        private bool IsNegative(string token)
-        {
-            throw new NotImplementedException();
+            return numbers
+                .Sum();
         }
 
         private string[] Tokenise(string input)

@@ -56,6 +56,14 @@ namespace StringCalculator.Tests
 
             act.ShouldThrow<NegativeNumberException>();
         }
+
+        [Fact]
+        public void ContainsAllNegativeNumbersInExceptionMessage()
+        {
+            Action act = () => calc.Add("-8,-7,-6,5,4,-3");
+
+            act.ShouldThrow<NegativeNumberException>().WithMessage("*-8*-7*-6*-3");
+        }
     }
 
 }

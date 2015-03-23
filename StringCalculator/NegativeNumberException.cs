@@ -10,5 +10,10 @@ namespace StringCalculator
         public NegativeNumberException(string message) : base(message)
         {
         }
+
+        public NegativeNumberException(IEnumerable<int> negativeNumbers)
+            : base(string.Join(", ", negativeNumbers))
+        {
+        }
     }
 }
