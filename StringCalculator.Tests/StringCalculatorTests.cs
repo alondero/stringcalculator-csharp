@@ -48,6 +48,14 @@ namespace StringCalculator.Tests
         {
             calc.Add("//a\n1a2a3").Should().Be(6);
         }
+
+        [Fact]
+        public void ThrowsExceptionIfNegativeNumberFound()
+        {
+            Action act = () => calc.Add("-1");
+
+            act.ShouldThrow<NegativeNumberException>();
+        }
     }
 
 }

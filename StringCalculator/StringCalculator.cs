@@ -20,8 +20,19 @@ namespace StringCalculator
                 return 0;
             }
 
-            return Tokenise(input)
-                    .Sum(token => Convert.ToInt32(token));
+            IEnumerable<int> numbers = Tokenise(input)
+                    .Select(token => Convert.ToInt32(token));
+
+            if (numbers.Min() < 0) {
+                throw new NegativeNumberException("Negative number found!");
+            }
+
+            return numbers.Sum();
+        }
+
+        private bool IsNegative(string token)
+        {
+            throw new NotImplementedException();
         }
 
         private string[] Tokenise(string input)
