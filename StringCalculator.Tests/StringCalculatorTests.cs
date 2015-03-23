@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xunit;
 using StringCalculator;
 using FluentAssertions;
+using FakeItEasy;
 
 namespace StringCalculator.Tests
 {
@@ -41,5 +42,12 @@ namespace StringCalculator.Tests
         {
             calc.Add("7\n42").Should().Be(49);
         }
+
+        [Fact]
+        public void SupportsCustomDelimiters()
+        {
+            calc.Add("//a\n1a2a3").Should().Be(6);
+        }
     }
+
 }
