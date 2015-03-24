@@ -40,7 +40,6 @@ namespace StringCalculator
             {
                 delimiters.Add(input.Substring(2, 1)[0]);
                 input = input.Substring(4);
-                Debug.WriteLine(input);
             }
             
             return input.Split(delimiters.ToArray());
